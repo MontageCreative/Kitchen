@@ -1,0 +1,163 @@
+<!-- Order one column version -->
+<div class="dialogStyle orderDetails oneColumn" style="display: none;">
+  <div class="dialogBody">
+
+    <!-- Order Item -->
+    <div class="order green">
+
+      <div class="orderHeader flex justify-space-between">
+        <span class="name">Table: 07</span>
+        <span>Restaurant</span>
+        <span>11:25am</span>
+      </div>
+
+      <div class="orderBody">
+        <div class="accordionList">
+
+          <!-- Dropdown Header -->
+          <a class="flex justify-space-between align-center toggle">
+            <span class="itemName">Entree (2/2)</span>
+            <span class="itemStatus">
+							<i class="cirle red"></i>
+							<span class="uppercase">done</span>
+						</span>
+            <i class="dropIcon fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+
+          <!-- Dropdown Body -->
+          <div class="accordionBody dropdown">
+            <ul class="list">
+              <li class="done">
+                <span>- Seafood Laksa</span>
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+              </li>
+              <li class="done">
+                <span>- Trio of Dips</span>
+                <i class="fa fa-check-circle" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="accordionList">
+
+          <!-- Dropdown Header -->
+          <a class="flex justify-space-between align-center toggle">
+            <span class="itemName">Main (0/2)</span>
+            <span class="itemStatus">
+							<i class="cirle red"></i>
+							<span class="uppercase">Done</span>
+						</span>
+            <i class="dropIcon fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+
+          <!-- Dropdown Body -->
+          <div class="accordionBody dropdown">
+            <ul class="list dark">
+              <li>
+                <span>- Seafood Laksa</span>
+                <i class="icon-delete" aria-hidden="true"></i>
+              </li>
+              <li>
+                <span>- Trio of Dips</span>
+                <i class="icon-delete" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="accordionList">
+
+          <!-- Dropdown Header -->
+          <a class="flex justify-space-between align-center toggle">
+            <span class="itemName">Dessert (0/2)</span>
+            <span class="itemStatus">
+							<i class="cirle red"></i>
+							<span class="uppercase">Done</span>
+						</span>
+            <i class="dropIcon fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+
+          <!-- Dropdown Body -->
+          <div class="accordionBody dropdown">
+            <ul class="list dark">
+              <li>
+                <span>- Seafood Laksa</span>
+                <i class="icon-delete" aria-hidden="true"></i>
+              </li>
+              <li>
+                <span>- Trio of Dips</span>
+                <i class="icon-delete" aria-hidden="true"></i>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Order Meta Bar -->
+        <div class="metaBar flex justify-center align-center">
+          <p>Order completed at: 12:57pm</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="dialogMeta flex justify-space-between align-center">
+    <button class="btn white" (click)="dialogRef.close()">Cancel</button>
+    <button class="btn green">Recall</button>
+  </div>
+</div>
+
+
+<!-- Order three column version -->
+<div class="dialogStyle orderDetails threeColumn">
+
+  <div class="dialogHeader flex justify-space-between align-center">
+    <h4>{{ table.name }}</h4>
+    <h4>Restaurant</h4>
+    <h4>{{ now | date:'shortTime' }}</h4>
+  </div>
+
+  <div class="dialogBody">
+
+    <!-- Order Item -->
+    <div class="order">
+
+      <div class="orderBody flex justify-space-between">
+        <div class="accordionList" *ngFor="let order of orderTypes; index as i">
+
+          <!-- Dropdown Header -->
+          <a class="flex justify-space-between align-center">
+            <span class="itemName">{{ order.title }} ({{ order.orders.length }}/{{ getOrderStatusCount(order) }})</span>
+            <span class="itemStatus">
+							<i class="cirle {{getOrderStatusClasses(order)}}"></i>
+							<span class="uppercase">{{ getOrderStatus(order)}}</span>
+						</span>
+          </a>
+
+          <!-- Dropdown Body -->
+          <div class="accordionBody scroll" slimScroll>
+            <ul class="list">
+              <li class="done" *ngFor="let item of order.orders">
+                <span>{{ item.name }}</span>
+                <i class="fa fa-check-circle" aria-hidden="true" *ngIf="item.done"></i>
+              </li>
+            </ul>
+          </div>
+          <!-- Order Meta Bar -->
+          <div class="metaBar flex justify-center align-center" *ngIf="i + 1 == orderTypes.length && table.done">
+            <p>Order completed at: {{ table.completeTime | date:'shortTime' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dialogMeta flex justify-space-between align-center">
+    <button class="btn white" (click)="dialogRef.close()">Cancel</button>
+    <button class="btn green" (click)="onRecall()">Recall</button>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.scroll {
+    height: 300px;
+}
+
+.slimscroll-wrapper {
+    .slimscroll-grid {
+        width: 1px !important;
+        margin: 0px !important;
+        right: 6px !important;
+        background-color: #e7e9ed !important;
+    }
+    .slimscroll-bar {
+        width: 4px !important;
+        right: 1px !important;
+        margin: 1px 0px !important;
+        background-color: #b1b1b1 !important;
+    }
+
+
+}
+.tableScroll {
+  .slimscroll-wrapper {
+    overflow: visible !important;
+
+    .slimscroll-grid {
+      background-color: #f7f7f7 !important;
+      width: 6px !important;
+      right: -20px !important;
+
+    }
+    .slimscroll-bar {
+      width: 4px !important;
+      right: -19px !important;
+    }
+  }
+}
+

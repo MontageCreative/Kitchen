@@ -1,0 +1,54 @@
+<div class="dialogStyle addGroup">
+  <div class="dialogHeader flex justify-space-between align-center">
+    <h4>Add display group</h4>
+    <a class="dialogClose" (click)="dialogRef.close()"><i aria-hidden="true" class="icon-delete"></i></a>
+  </div>
+  <div>
+    <form>
+      <div class="p-30">
+        <h5 class="pb-20">Group Name</h5>
+        <div class="field">
+          <input type="text" value="1"/>
+        </div>
+      </div>
+      <h5 class="pl-30">Add Devices</h5>
+      <ul class="groupList">
+        <li>
+          <div>
+            <span>Main Kitchen 1</span>
+            <div class="switch">
+              <input id="{{checkboxes[0].id}}" type="checkbox" [checked]="checkboxes[0].value"
+                     (change)="checkboxes[0].value = !checkboxes[0].value"/>
+              <label for="{{checkboxes[0].id}}"></label>
+            </div>
+          </div>
+
+        </li>
+        <li>
+          <div>
+            <span>Main Kitchen 2</span>
+            <div class="switch">
+              <input type="checkbox" id="{{checkboxes[1].id}}" [checked]="checkboxes[1].value"
+                     (change)="checkboxes[1].value = !checkboxes[1].value"/>
+              <label for="{{checkboxes[1].id}}"></label>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <span>Main Kitchen 3</span>
+            <div class="switch">
+              <input type="checkbox" id="{{checkboxes[2].id}}" [checked]="checkboxes[2].value"
+                     (change)="checkboxes[2].value = !checkboxes[2].value"/>
+              <label for="{{checkboxes[2].id}}"></label>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div class="dialogMeta flex justify-space-between align-center">
+    <button class="btn white" (click)="dialogRef.close()">Cancel</button>
+    <button class="btn green" (click)="dialogRef.close()">Save</button>
+  </div>
+</div>

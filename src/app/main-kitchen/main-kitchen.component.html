@@ -1,0 +1,12 @@
+<app-main-kitchen-header></app-main-kitchen-header>
+
+<section class="content board">
+  <div class="boardColumns" *ngFor="let table of tables; let i = index;">
+    <app-main-kitchen-order  [table]="table" [(tables)]="tables" [indexT]="i" *ngIf="!table.isSnoozed && !table.done"></app-main-kitchen-order>
+  </div>
+
+  <div class="boardColumns summary">
+    <app-main-kitchen-sidebar [(tables)]="tables"></app-main-kitchen-sidebar>
+  </div>
+</section>
+

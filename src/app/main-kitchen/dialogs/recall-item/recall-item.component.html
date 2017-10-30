@@ -1,0 +1,32 @@
+<div class="dialogStyle recallItem">
+  <div class="dialogHeader flex justify-space-between align-center">
+    <h4>Recall Order: Table 4</h4>
+    <a class="dialogClose" (click)="dialogRef.close()"><i aria-hidden="true" class="icon-delete"></i></a>
+  </div>
+    <div class="dialogBody">
+
+      <p class="text-dark w-600 mb-25">Why are you recalling this item?</p>
+      <div class="checkbox mb-15">
+        <label class="flex">
+          <input type="checkbox" (change)="onCheck('marked_in_error', $event.target.checked)" [ngModel]="reason.first">
+          <span class="checkIcon">
+                    <i class="fa fa-check"></i>
+                </span>
+          <span class="label">Marked in error</span>
+        </label>
+      </div>
+      <div class="checkbox mb-15">
+        <label class="flex">
+          <input type="checkbox" (change)="onCheck('remaking_item', $event.target.checked)" [ngModel]="!reason.first"/>
+          <span class="checkIcon">
+                    <i class="fa fa-check"></i>
+                </span>
+          <span class="label">Remaking item</span>
+        </label>
+      </div>
+    </div>
+    <div class="dialogMeta flex justify-space-between align-center">
+      <button class="btn white" (click)="dialogRef.close()">Cancel</button>
+      <button class="btn green" [disabled]='' (click)="onRecallItem()">Recall Item</button>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+.tabstyle {
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  &>li {
+    float: left;
+    margin-right: 5px;
+
+    a {
+      display: block;
+      border: 1px solid #ecedf0;
+      border-bottom: 0px;
+      font-size: 14px;
+      padding: 15px 25px;
+      min-width: 105px;
+      border-radius: 4px 4px 0 0;
+      text-align: center;
+      @include linearGradient(#ffffff, #f4f6fa);
+      @include transition(all .2s);
+
+      &:hover {
+        opacity: .9;
+      }
+
+    }
+    &.active {
+      margin-bottom: -2px;
+      z-index: 555;
+      &>a {
+        background: #ffffff;
+        font-size: 18px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin-top: -5px;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  @media (max-width: 1300px) {
+    li {
+      a {
+        padding: 15px 10px;
+      }
+    }
+  }
+}
+
+
+.addBtn {
+  height: 36px;
+  width: 36px;
+  font-size: 20px;
+  padding: 0;
+}
+
+.settingBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  @include transform(translateY(-50%));
+  @include backface-visibility(hidden);
+}

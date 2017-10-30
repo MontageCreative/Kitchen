@@ -1,0 +1,40 @@
+<div class="dialogStyle completedOrders">
+	<div class="dialogHeader flex justify-space-between align-center">
+		<h4>Completed Orders</h4>
+		<a class="dialogClose" (click)="dialogRef.close()"><i aria-hidden="true" class="icon-delete"></i></a>
+	</div>
+	<div class="dialogBody">
+		<div class="table firstDark recall">
+			<table border="0">
+				<thead>
+					<tr>
+						<th>Docket No.</th>
+						<th>Table No.</th>
+						<th>Clerk</th>
+						<th>Order Time</th>
+						<th>Location</th>
+						<th>Time Completed</th>
+						<th class="text-center">Order</th>
+						<th>Recall</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let table of tables; index as i">
+						<td>{{ i + 1 }}</td>
+						<td>{{ table.name }}</td>
+						<td>{{ table.customer.name }}</td>
+						<td>{{ table.time }}</td>
+						<td>{{ table.type | uppercase }}</td>
+						<td>{{ table.completeTime | date:'shortTime' }}</td>
+						<td class="icon" (click)="orderDetailsDialog(table)"><span class="icon-order"></span></td>
+						<td (click)="recallItemDialog(table, i)">Recall Order</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="dialogMeta flex justify-space-between align-center">
+		<button class="btn white" (click)="dialogRef.close()">Cancel</button>
+		<button class="btn green" (click)="dialogRef.close()">Exit</button>
+	</div>
+</div>

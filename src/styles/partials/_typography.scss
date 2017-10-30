@@ -1,0 +1,105 @@
+.uppercase {
+	text-transform: uppercase;
+}
+.lowercase {
+	text-transform: lowercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+
+.no-underline {
+	text-decoration: none;
+}
+.underline {
+	text-decoration: underline;
+}
+
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+
+// Captions
+h1, .h1 {
+	font-size: 30px;
+}
+h2, .h2 {
+	font-size: 24px;
+}
+h3, .h3 {
+	font-size: 20px;
+}
+h4, .h4 {
+	font-size: 18px;
+}
+h5, .h5 {
+	font-size: 16px;
+}
+
+// Simple Text Sizes
+.font-xs {
+	font-size: 12px;
+}
+.font-sm {
+	font-size: 14px;
+}
+.font-normal {
+	font-size: 16px;
+}
+.font-md {
+	font-size: 18px;
+}
+.font-lg {
+	font-size: 20px;
+}
+.font-xl {
+	font-size: 22px;
+}
+.font-xxl {
+	font-size: 24px;
+}
+.font-xxxl {
+	font-size: 28px;
+}
+
+// Text Color
+
+.text-white {
+	color: #fff;
+}
+.text-grey {
+	color: #7c8ca5;
+}
+.text-dark {
+	color: $text;
+}
+.text-red {
+	color: $red;
+}
+.text-green {
+	color: $green;
+}
+.text-blue {
+	color: $blue;
+}
+
+// Text Style
+.italic {
+	font-style: italic;
+}
+
+// Font Weights
+
+$step: 1;
+@while $step <= 9 {
+	.w-#{$step*100} {
+		font-weight: #{$step*100};
+	}
+	$step: $step + 1;
+}

@@ -1,0 +1,59 @@
+header {
+	width: 100%;
+	padding: 13px 30px;
+	background-color: $dark;
+
+	.pageInfo {
+		color: #fff;
+		font-weight: 100;
+
+		span {
+			color: #7c8ca5;
+		}
+	}
+	.dateSelector {
+		text-align: center;
+		
+		.nav-btn {
+			width: 42px;
+			height: 44px;
+			color: #ced0da;
+			border: 1px solid #313d4f;
+			border-right: 0px;
+			cursor: pointer;
+			background-color: $dark;
+			@include transition(all 0.2s);
+
+			&:hover {
+				opacity: .9;
+			}
+
+			&[disabled] {
+				cursor: default;
+				color: rgba(#ced0da,0.3);
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+		p {
+			color: #fff;
+			height: 44px;
+			padding: 0px 40px; 
+			line-height: 42px;
+			border: 1px solid #313d4f;
+			border-right: 0px;
+		}
+
+		li {
+			&:last-child {
+				.nav-btn {
+					&:last-child {
+						border-right: 1px solid #313d4f; 
+					}
+				}
+			}
+		}
+	}
+}

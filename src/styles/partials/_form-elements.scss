@@ -1,0 +1,243 @@
+// Buttons
+
+.btn {
+	display: inline-block;
+	padding: 0px 23px;
+	height: 36px;
+	line-height: 34px;
+	text-align: center;
+	color: #fff;
+	font-size: $fontSize;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: transparent;
+  @include backface-visibility(hidden);
+	@include transition(all 0.2s);
+
+	&.smallPadd {
+		padding: 0 16px;
+	}
+
+	&:hover {
+		opacity: .9;
+	}
+
+	&.white {
+		color: #354052;
+		border-color: #ced0da;
+		@include linearGradient(#ffffff, #f1f3f7);
+	}
+	&.blue {
+		color: #fff;
+		border-color: $blue;
+		@include linearGradient(#2ea1f8, #1991eb);
+	}
+	&.green {
+		border-color: $green;
+		@include linearGradient(#39b54a, #33aa44);
+	}
+	&.grey {
+		border-color: #ccd4dc;
+		@include linearGradient(#ccd4dc, #c0c4c8);
+	}
+  &.tLeft {
+    text-align: left;
+  }
+  &.disabled {
+    background-color: #ccd3da;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Checkbox Styles
+
+.checkbox {
+	label {
+		cursor: pointer;
+
+		&.flex {
+			@extend .align-flex-end;
+		}
+
+		.checkIcon {
+			height: 16px;
+			width: 16px;
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+			text-align: center;
+			border-radius: 4px;
+			margin-right: 10px;
+			border: 1px solid #ced0da;
+			@include transition(all .2s);
+			@include linearGradient(#ffffff, #f1f3f7);
+
+			.fa-check {
+				color: #fff;
+				font-size: 9px;
+				position: relative;
+				top: -1px;
+				opacity: 0;
+				@include transition(all .2s);
+			}
+		}
+		input[type="checkbox"] {
+			visibility: hidden;
+			display: none;
+
+			&:checked + .checkIcon {
+				border-color: $green;
+				@include linearGradient(#39b54a, #33aa44);
+
+				.fa-check {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+// Radio Button Styles
+
+.radioBtn {
+	label {
+		@extend .btn;
+		@extend .white;
+	}
+	input[type="radio"] {
+		visibility: hidden;
+		display: none;
+
+		&:checked + label {
+			@extend .blue;
+		}
+	}
+}
+
+// Input Field Styles
+
+.field {
+	position: relative;
+
+	input[type="text"], input [type="number"], input[type="password"] {
+		width: 100%;
+		height: 36px;
+		color: #354052;
+		font-size: 14px;
+		padding: 0 25px 0 15px;
+		border: 1px solid #dfe3e9;
+		border-radius: 4px;
+	}
+
+  input[type="text"],input[type="password"] {
+    padding-right: 15px;
+  }
+  textarea {
+    border: 1px solid #dfe3e9;
+    resize: none;
+    border-radius: 4px;
+    padding: 15px;
+
+    &.height72 {
+      height: 72px;
+    }
+  }
+
+	&.fixedWidth {
+		width: 245px;
+	}
+
+  &.inheritWidth {
+
+    input[type="text"], input [type="number"], input[type="password"] {
+      width: inherit;
+    }
+  }
+}
+
+// Quantity Input Field Styles
+
+.quantity-nav {
+	position: absolute;
+	height: 36px;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+
+	.quantity-button {
+		position: relative;
+		cursor: pointer;
+		border-left: 1px solid #dfe3e9;
+		width: 25px;
+		text-align: center;
+		font-size: 14px;
+		color: #dfe3e9;
+		vertical-align: middle;
+		@include transition(all 0.2s);
+
+		&:hover {
+			color: $text;
+		}
+
+		i {
+			vertical-align: middle;
+		}
+
+		&.quantity-up {
+			height: 18px;
+			border-bottom: 1px solid #dfe3e9;
+		}
+		&.quantity-down {
+			height: 18px;
+		}
+	}
+}
+// Switch Style
+
+.switch {
+  input{
+    display:none;
+
+    &[type=checkbox]:checked {
+      & + label {
+        background-color: $green;
+        -webkit-background-clip: content-box;
+
+        &:before {
+          left: 3px;
+          background-color: #efeeec;
+          color: #efeeec;
+        }
+      }
+    }
+  }
+  label {
+    width: 48px;
+    height: 24px;
+    float: left;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    @include transition(all 0.3s);
+    background-color: #dfe1e5;
+
+
+    &::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background: transparent;
+      left: 25px;
+      top: 2px;
+      background-color: #fff;
+      border-radius: 100px;
+      @include transition(all 0.3s);
+    }
+  }
+}

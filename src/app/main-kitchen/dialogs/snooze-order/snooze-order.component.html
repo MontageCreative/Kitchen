@@ -1,0 +1,52 @@
+<div class="dialogStyle snoozeOrder">
+  <div class="dialogHeader flex justify-space-between align-center">
+    <h4>Snooze an Order</h4>
+    <a class="dialogClose" (click)="dialogRef.close()"><i aria-hidden="true" class="icon-delete"></i></a>
+  </div>
+  <div class="dialogBody">
+    <form>
+
+      <div class="field fixedWidth mb-25">
+        <label class="text-grey block mb-10">Snooze for:</label>
+        <input type="text" placeholder="10 Minutes" [(ngModel)]="minutes" [ngModelOptions]="{standalone: true}">
+
+        <div class="quantity-nav">
+          <div class="quantity-button quantity-up" (click)="onChangeMinutes('+')">
+            <i aria-hidden="true" class="fa fa-angle-up"></i>
+          </div>
+          <div class="quantity-button quantity-down" (click)="onChangeMinutes('-')">
+            <i aria-hidden="true" class="fa fa-angle-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="text-grey block mb-10">Select Time:</label>
+        <div class="flex align-center justify-space-between">
+          <div class="radioBtn" (click)="onChangeMinutes(5)">
+            <input type="radio" id="minute5" name="time">
+            <label for="minute5">5 Minutes</label>
+          </div>
+          <div class="radioBtn" (click)="onChangeMinutes(10)">
+            <input type="radio" id="minute10" name="time">
+            <label for="minute10">10 Minutes</label>
+          </div>
+          <div class="radioBtn" (click)="onChangeMinutes(15)">
+            <input type="radio" id="minute15" name="time">
+            <label for="minute15">15 Minutes</label>
+          </div>
+          <div class="radioBtn" (click)="onChangeMinutes(20)">
+            <input type="radio" id="minute20" name="time">
+            <label for="minute20">20 Minutes</label>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <div class="dialogMeta flex justify-space-between align-center">
+    <button class="btn white" (click)="dialogRef.close()">Cancel</button>
+    <button class="btn green" (click)="onSnoozeOrder()">Snooze Order</button>
+  </div>
+</div>
+

@@ -1,0 +1,24 @@
+<header class="flex justify-space-between align-center">
+  <div class="pageInfo">
+    <h4 class="w-200">Main Kitchen <span class="font-sm w-100"> | 1:12pm  Monday 4th July 2017</span></h4>
+  </div>
+  <div class="dateSelector">
+    <ul class="flex">
+      <li class="flex">
+        <button class="nav-btn" disabled><i class="fa fa-backward" aria-hidden="true"></i></button>
+        <button class="nav-btn" disabled><i class="fa fa-play fa-flip-horizontal" aria-hidden="true"></i></button>
+      </li>
+      <li>
+        <p class="font-normal">Orders in queue: 11</p>
+      </li>
+      <li class="flex">
+        <button class="nav-btn"><i class="fa fa-play" aria-hidden="true"></i></button>
+        <button class="nav-btn"><i class="fa fa-forward" aria-hidden="true"></i></button>
+      </li>
+    </ul>
+  </div>
+  <div class="headerBtns">
+    <button class="btn" [routerLink]="['/settings']"><i class="fa fa-cog text-grey" aria-hidden="true"></i></button>
+    <button class="btn blue">Exit</button>
+  </div>
+</header>

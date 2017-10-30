@@ -1,0 +1,32 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #222c3c;
+
+  .menu {
+    li {
+      a {
+        display: block;
+        color: #b7c0cd;
+        padding: 12px 0 12px 30px;
+        @include transition(all 0.3s);
+
+        &.active, &:hover {
+          color: #ffffff;
+          background-color: #313d4f;
+        }
+      }
+    }
+  }
+  .fixedBottom {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    right: 0;
+    max-width: 200px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+}

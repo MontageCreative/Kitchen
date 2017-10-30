@@ -1,0 +1,39 @@
+<div class="order green">
+
+  <div class="orderHeader flex justify-space-between">
+    <span class="name">{{table.name}}</span>
+    <span class="capitalize">{{table.type}}</span>
+    <span>{{table.time}}</span>
+  </div>
+
+  <div class="orderBody">
+    <div class="accordionList" *ngFor="let orderType of table.orderTypes">
+
+      <!-- Dropdown Header -->
+      <a class="flex justify-space-between align-center" appToogle>
+                      <span class="itemName">{{orderType.title}} {{ordersCounter(orderType.orders)}}</span>
+                      <span class="itemStatus">
+                        <i class="cirle" [ngClass]="getClassForHeader(orderType.orders)"></i>
+                        <span class="uppercase">{{getTextForHeader(orderType.orders)}}</span>
+                      </span>
+                      <i class="dropIcon fa fa-angle-down" aria-hidden="true"></i>
+      </a>
+
+      <!-- Dropdown Body -->
+      <div class="accordionBody dropdown">
+        <ul class="list">
+          <app-main-kitchen-order-item *ngFor="let order of orderType.orders" [order]="order" [table]="table">
+          </app-main-kitchen-order-item>
+        </ul>
+      </div>
+
+    </div>
+    <app-order-meta-bar [table]="table"></app-order-meta-bar>
+
+    <div class="metaBtns flex justify-space-between align-center">
+      <button class="btn grey smallPadd" (click)="bumpOrderDialog()">{{ indexT + 1}}</button>
+      <button class="btn blue smallPadd" (click)="snoozeOrderDialog()">Snooze</button>
+      <button class="btn green smallPadd" (click)="markAsDoneDialog()">Done</button>
+    </div>
+  </div>
+</div>

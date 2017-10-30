@@ -1,0 +1,57 @@
+// =======================================================================
+// Fluid Grid Generator Mixin
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// 
+// Based on fluid grid from http://twitter.github.com/bootstrap/
+// =======================================================================
+// 
+//
+// Parameters
+
+$number-of-columns: 12;
+$gutter-width: 3%;
+$row-class-name: "row";
+$column-class-name: "col";
+
+// Row styles
+.#{$row-class-name} {
+	width: 100%; 
+	*zoom: 1;
+	
+	&:before,
+	&:after {
+		display: table ;
+		content: "";
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	// Column styles (any direct children of a row)
+	& > *{
+		display: block;
+		float: left;
+		margin-left: $gutter-width;
+
+		&:first-child, &.ml-0 {
+			margin-left: 0;
+		}
+	}
+} // End of row styles
+
+// Individual column widths generator
+
+// Set width of each column
+$column-width: (100% - $gutter-width * ($number-of-columns - 1)) / $number-of-columns;
+
+// Set counter to equal number of columns
+$i: $number-of-columns;
+
+// For each column calculate width
+@while $i > 0 {
+	.#{$column-class-name}-#{$i} { 
+		width: ($column-width * $i) + ($gutter-width * ($i - 1));
+	}
+	$i: $i - 1;
+} // End of individual column widths generator

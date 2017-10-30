@@ -1,0 +1,15 @@
+<div class="dialogStyle bumpOrder">
+	<div class="dialogHeader flex justify-space-between align-center">
+		<h4>Bump Order: Table 4</h4>
+		<a class="dialogClose" (click)="dialogRef.close()"><i aria-hidden="true" class="icon-delete"></i></a>
+	</div>
+	<div class="dialogBody">
+		<div class="flex justify-space-between">
+			<button class="btn white" (click)="pushOrUnshift(false)">Move to Front of Queue</button>
+			<button class="btn white" (click)="pushOrUnshift(true)">Move to End of Queue</button>
+		</div>
+	</div>
+	<div class="dialogMeta flex justify-space-between align-center">
+		<button class="btn white" (click)="dialogRef.close()">Cancel</button>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="dialogStyle editGroupName">
+  <div class="dialogHeader flex justify-space-between align-center">
+    <h4>Edit Group Names</h4>
+    <a class="dialogClose" (click)="dialogRef.close()"><i aria-hidden="true" class="icon-delete"></i></a>
+  </div>
+  <div>
+    <form>
+      <ul class="groupList pb-70">
+        <li>
+          <div>
+            <div class="field col-11">
+              <input type="text" placeholder="" value="Kitchen">
+            </div>
+            <a class="deleteBtn col-1"><span class="icon-delete-thin"></span></a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="field col-11">
+              <input type="text" placeholder="" value="Barista">
+            </div>
+            <a class="deleteBtn col-1"><span class="icon-delete-thin"></span></a>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div class="field col-11">
+              <input type="text" placeholder="" value="Dispense">
+            </div>
+            <a class="deleteBtn col-1"><span class="icon-delete-thin"></span></a>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
+  <div class="dialogMeta flex justify-space-between align-center">
+    <button class="btn white" (click)="dialogRef.close()">Cancel</button>
+    <button class="btn green" (click)="dialogRef.close()">Snooze Order</button>
+  </div>
+</div>

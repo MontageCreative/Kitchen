@@ -1,0 +1,40 @@
+<!-- Current Stats -->
+<div class="currentStats">
+  <h5 class="text-grey">Current Shift Stats</h5>
+  <ul class="text-dark mt-10">
+    <li class="mt-5">Items for current shift: 23</li>
+    <li class="mt-5">Average Prep Time: 27 minutes</li>
+    <li class="mt-5">Number of Covers: 56</li>
+  </ul>
+</div>
+
+<!-- Summary List -->
+<div class="summaryList">
+  <a class="accordionHeader flex justify-space-between align-center toggle">
+              <span class="font-normal">Summary</span>
+              <i class="dropIcon fa fa-angle-down text-dark" aria-hidden="true"></i>
+            </a>
+
+  <div class="accordionBody text-dark dropdown">
+    <h5>Total Items: XX</h5>
+    <ul class="list">
+      <li>5 x Ribeye
+        <ul class="subList">
+          <li>2x Medium Rare</li>
+          <li>3x Medium</li>
+        </ul>
+      </li>
+      <li>3 x Parpadelle</li>
+      <li>2 x Seafood Laksa</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Summary Meta -->
+<div class="summaryMeta">
+  <button class="btn blue fullWidth mb-10" (click)="snoozedOrdersDialog()">Snoozed Orders</button>
+  <button class="btn green fullWidth" (click)="completedOrdersDialog()">Completed Orders</button>
+  <div class="metaLogo">
+    <a href="#"><img src="assets/img/handl.svg" alt="handl"></a>
+  </div>
+</div>

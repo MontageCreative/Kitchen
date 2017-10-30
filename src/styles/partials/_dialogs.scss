@@ -1,0 +1,197 @@
+.mat-dialog-container {
+	padding: 0 !important;
+	overflow: hidden !important;
+}
+.dialogStyle {
+
+	.dialogHeader {
+		height: 60px;
+		padding: 0 30px;
+		width: 100%;
+		color: #fff;
+		font-size: 24px;
+		font-weight: 600;
+		@include linearGradient(#2ea1f8, #1991eb);
+
+		.dialogClose {
+			font-size: 10px;
+			color: rgba(#fff,0.4);
+		}
+	}
+
+	.dialogBody {
+		padding: 40px 65px;
+	}
+	.dialogMeta {
+		height: 60px;
+		padding: 0px 28px;
+		text-align: center;
+		background-color: #f0f3f8;
+	}
+
+	// "Bump Order" Dialog
+	&.bumpOrder {
+		width: 570px;
+
+		.dialogBody {
+			padding: 55px 75px;
+		}
+	}
+
+	// "Recall Item" Dialog
+	&.recallItem {
+		width: 570px;
+
+		.dialogBody {
+			padding: 28px;
+		}
+	}
+
+	// "Completed Orders" Dialog
+	&.completedOrders {
+		width: 960px;
+
+		.dialogBody {
+			padding: 0px;
+		}
+	}
+
+  //"add Group" Dialog
+  &.addGroup {
+    width: 570px;
+    .groupList {
+      li {
+        >div {
+          padding: 13px 30px;
+        }
+      }
+    }
+  }
+
+  //"edit Group Name" Dialog
+  &.editGroupName {
+    width: 570px;
+    .groupList {
+      li {
+        >div {
+          padding: 15px 30px;
+        }
+      }
+    }
+  }
+	// "Snoozed Orders" Dialog
+	&.snoozedOrders {
+		width: 960px;
+
+		.dialogBody {
+			padding: 0px;
+		}
+	}
+
+	// "Mark order As Done" Dialog
+	&.markAsDone {
+		width: 570px;
+
+		.dialogBody {
+			padding: 28px;
+		}
+	}
+
+	// "Snooze Order" Dialog
+	&.snoozeOrder {
+		width: 570px;
+
+		.dialogBody {
+			padding: 28px;
+		}
+	}
+
+	// "Order Details" Dialog
+	&.orderDetails {
+
+		.dialogBody {
+			background-color: #f7f9fb;
+
+			.order {
+				margin-bottom: 0;
+
+				.orderBody {
+					border-width: 0;
+					border-top-width: 3px;
+
+					.accordionList {
+						a {
+							background-color: #f5f8fa;
+						}
+					}
+				}
+			}
+		}
+
+		&.oneColumn {
+			width: 300px;
+
+			.dialogBody {
+				padding: 15px 15px 0;
+
+				.metaBar {
+					width: 100%;
+					margin: 10px 0 0;
+				}
+			}
+
+			.dialogMeta {
+				padding: 10px 15px;
+				background-color: #f7f9fb;
+			}
+		}
+
+		&.threeColumn {
+			width: 890px;
+
+			.dialogBody {
+				padding: 0px;
+
+				.order {
+					width: 100%;
+
+					.orderBody {
+						border: 0px;
+						margin-top: 0px;
+
+						.accordionList {
+							width: 33.33%;
+							min-height: 300px;
+							padding-bottom: 42px;
+							position: relative;
+
+							a {
+								padding: 6px 25px;
+								border-top-width: 0;
+								border-bottom-width: 1px;
+								border-bottom-color: #e7e9ed;
+							}
+
+							&:nth-child(2) {
+								border-left: 1px solid #e7e9ed;
+								border-right: 1px solid #e7e9ed;
+							}
+
+							.accordionBody {
+								display: block;
+								padding-right: 15px;
+							}
+						}
+					}
+					.metaBar {
+						width: calc(100% - 60px);
+						margin: 10px 30px;
+						position: absolute;
+						bottom: 5px;
+					}
+				}
+			}
+
+		}
+	}
+}

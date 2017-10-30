@@ -1,0 +1,16 @@
+<li [ngClass]="getClassesForOrder(order)" (click)="cook(order)">
+  <span>
+    <span *ngIf="!order.needTiming && order.ready">-</span>
+  <i class="icon-time blue" *ngIf="order.needTiming && !order.ready"></i>
+  <span *ngIf="order.needTiming && order.ready" class="text" [ngClass]="getClassesForTimer(order)">{{order.timer | counter}}</span>  {{order.name}}
+  </span>
+
+  <i class="fa fa-check-circle" aria-hidden="true" *ngIf="order.done; else delete"></i>
+  <ng-template #delete>
+    <i class="icon-delete" aria-hidden="true"></i>
+  </ng-template>
+
+  <ul class="subList font-xs" *ngIf="order.subOrders">
+    <li *ngFor="let subOrder of order.subOrders" [class.done]="order.done">{{subOrder.name}}</li>
+  </ul>
+</li>

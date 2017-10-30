@@ -1,0 +1,320 @@
+<div class="article mBottom0 ">
+  <h4>Display Profiles</h4>
+</div>
+<div class="article pBottom0 mBottom0 flex">
+  <div class="col-4 borderR pt-15">
+    <ul class="groupList">
+      <li>
+        <div class="noBorder size-18">
+          <span>Kitchen Dockets</span>
+          <div class="flex align-center">
+            <a class="mr-15"><i aria-hidden="true" class="fa fa-cog text-grey"></i></a>
+            <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="noBorder size-18">
+          <span>Kitchen Dockets</span>
+          <div class="flex align-center">
+            <a class="mr-15"><i aria-hidden="true" class="fa fa-cog text-grey"></i></a>
+            <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="noBorder size-18">
+          <span>Kitchen Dockets</span>
+          <div class="flex align-center">
+            <a class="mr-15"><i aria-hidden="true" class="fa fa-cog text-grey"></i></a>
+            <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="pr-30 pl-10">
+      <button class="btn disabled mt-15 leftplus tLeft fullWidth"><span>+</span>Add New Profile</button>
+    </div>
+  </div>
+  <div class="col-8 pt-30 pl-30 pb-50">
+    <h4 class="pb-5">Display devices linked to this profile:</h4>
+    <div class="borderB pb-25">
+      <div class="flex">
+        <ul class="groupList col-7">
+          <li>
+            <div>
+              <span>Main kitchen 1</span>
+              <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span>Main kitchen 2</span>
+              <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button class="btn green mt-15 leftplus"><span>+</span>New Device</button>
+    </div>
+
+
+    <div class="pt-35">
+      <ul class="tabstyle">
+        <li [class.active]="tab === ''" (click)="changeTabs()"><a>Docket Format</a></li>
+        <li [class.active]="tab === 'keyBinding'" (click)="changeTabs('keyBinding')"><a>Key Binding</a></li>
+        <li [class.active]="tab === 'timers'" (click)="changeTabs('timers')"><a>Timers</a></li>
+        <li [class.active]="tab === 'sms'" (click)="changeTabs('sms')"><a>SMS Configuration</a></li>
+      </ul>
+    </div>
+    <div class="contentBorder pl-30 pt-30 pr-30" [ngSwitch]="tab">
+
+      <div *ngSwitchDefault>
+        <h4 class="pb-20">Group Items by:</h4>
+        <div class="pb-25 borderB">
+          <div class="checkbox mb-15">
+            <label class="flex">
+              <input type="checkbox">
+              <span class="checkIcon"><i class="fa fa-check"></i></span>
+              <span class="label">PLU Group</span>
+            </label>
+          </div>
+          <div class="checkbox mb-15">
+            <label class="flex">
+              <input type="checkbox">
+              <span class="checkIcon"><i class="fa fa-check"></i></span>
+              <span class="label">Course</span>
+            </label>
+          </div>
+        </div>
+        <ul class="groupList pb-50">
+          <li>
+            <div class="listLg greyText">
+              <span>Show Prompt on Item Selection</span>
+              <div class="switch">
+                <input id="{{checkboxes.docketFormat.id}}" type="checkbox" [checked]="checkboxes.docketFormat.value"
+                       (change)="checkboxes.docketFormat.value = !checkboxes.docketFormat.value"/>
+                <label for="{{checkboxes.docketFormat.id}}"></label>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="listLg greyText justify-start">
+              <label class="mr-40">Display time of completed orders from previous serving period</label>
+              <div class="field fixedWidth">
+                <input type="text" placeholder="10 Minutes">
+                <div class="quantity-nav">
+                  <div class="quantity-button quantity-up">
+                    <i aria-hidden="true" class="fa fa-angle-up"></i>
+                  </div>
+                  <div class="quantity-button quantity-down">
+                    <i aria-hidden="true" class="fa fa-angle-down"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div *ngSwitchCase="'keyBinding'">
+        <h4 class="pb-15">Configure your Bump Pad or Keyboard Shortcuts:</h4>
+        <div class="tableScroll">
+          <div class="scroll" slimScroll>
+            <table class="tableStyle">
+              <thead>
+              <tr>
+                <th class="col-5">Function</th>
+                <th class="col-3">Bump Pad</th>
+                <th class="col-4">Keyboard Shortcut</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Home Screen</td>
+                <td>
+                  <mat-select placeholder="Favorite food" name="food">
+                    <mat-option [value]="1">asd</mat-option>
+                    <mat-option [value]="2">asd</mat-option>
+                  </mat-select>
+                </td>
+                <td>
+                  <mat-select placeholder="Favorite food" name="food">
+                    <mat-option [value]="1">asd</mat-option>
+                    <mat-option [value]="2">asd</mat-option>
+                  </mat-select>
+                </td>
+              </tr>
+              <tr>
+                <td>Next Screen</td>
+                <td>
+                  <mat-select placeholder="Favorite food" name="food">
+                    <mat-option [value]="1">asd</mat-option>
+                    <mat-option [value]="2">asd</mat-option>
+                  </mat-select>
+                </td>
+                <td>
+                  <mat-select placeholder="Favorite food" name="food">
+                    <mat-option [value]="1">asd</mat-option>
+                    <mat-option [value]="2">asd</mat-option>
+                  </mat-select>
+                </td>
+              </tr>
+              <tr>
+                <td>Previous Screen</td>
+                <td>
+                  <mat-select placeholder="Favorite food" name="food">
+                    <mat-option [value]="1">asd</mat-option>
+                    <mat-option [value]="2">asd</mat-option>
+                  </mat-select>
+                </td>
+                <td>
+                  <mat-select placeholder="Favorite food" name="food">
+                    <mat-option [value]="1">asd</mat-option>
+                    <mat-option [value]="2">asd</mat-option>
+                  </mat-select>
+                </td>
+              </tr>
+              <tr>
+                <td>Previous Screen</td>
+                <td>
+                  <mat-select placeholder="Favorite food" name="food">
+                    <mat-option [value]="1">asd</mat-option>
+                    <mat-option [value]="2">asd</mat-option>
+                  </mat-select>
+                </td>
+                <td>
+                  <mat-select placeholder="Favorite food" name="food">
+                    <mat-option [value]="1">asd</mat-option>
+                    <mat-option [value]="2">asd</mat-option>
+                  </mat-select>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'timers'">
+        <h4 class="pb-20 borderB">Configure your Count Up Timer:</h4>
+        <ul class="groupList pb-50">
+          <li>
+            <div class="listLg greyText">
+              <span>Show Prompt on Item Selection</span>
+              <div class="switch">
+                <input id="{{checkboxes.timers.id}}" type="checkbox" [checked]="checkboxes.timers.value"
+                       (change)="checkboxes.timers.value = !checkboxes.timers.value"/>
+                <label for="{{checkboxes.timers.id}}"></label>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="listLg greyText justify-start">
+              <label class="col-3">Order Removal After</label>
+              <div class="field fixedWidth col-4">
+                <input type="text" placeholder="5 Seconds">
+                <div class="quantity-nav">
+                  <div class="quantity-button quantity-up">
+                    <i aria-hidden="true" class="fa fa-angle-up"></i>
+                  </div>
+                  <div class="quantity-button quantity-down">
+                    <i aria-hidden="true" class="fa fa-angle-down"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="listLg greyText justify-start">
+              <label class="col-3">Late Warning After</label>
+              <div class="field fixedWidth col-4">
+                <input type="text" placeholder="365 Seconds">
+                <div class="quantity-nav">
+                  <div class="quantity-button quantity-up">
+                    <i aria-hidden="true" class="fa fa-angle-up"></i>
+                  </div>
+                  <div class="quantity-button quantity-down">
+                    <i aria-hidden="true" class="fa fa-angle-down"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div *ngSwitchCase="'sms'">
+        <h4 class="pb-20 borderB">Enable Twilio SMS Gateway</h4>
+        <div class="borderB">
+          <h4 class="pt-20 pb-20">Twilio SMS Settings</h4>
+          <ul class="groupList noBorderList">
+            <li>
+              <div class=" greyText justify-start">
+                <label class="col-3">Account SID</label>
+                <div class="field col-4">
+                  <input type="text" placeholder="">
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class=" greyText justify-start">
+                <label class="col-3">Auth Token</label>
+                <div class="field col-4">
+                  <input type="text" placeholder="">
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class=" greyText justify-start">
+                <label class="col-3">Phone No.</label>
+                <div class="field col-4">
+                  <input id="phone" type="text" placeholder="">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="pt-20 pb-20">Twilio SMS Settings</h4>
+          <div class="mb-15">
+            <ul class="groupList noBorderList">
+              <li>
+                <div class="listLg greyText justify-start">
+                  <label class="col-3">Template Name</label>
+                  <div class="field col-5">
+                    <input type="text" placeholder="365 Seconds">
+                    <div class="quantity-nav">
+                      <div class="quantity-button quantity-up">
+                        <i aria-hidden="true" class="fa fa-angle-up"></i>
+                      </div>
+                      <div class="quantity-button quantity-down">
+                        <i aria-hidden="true" class="fa fa-angle-down"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="listLg greyText justify-start align-flex-start">
+                  <label class="col-3">Message</label>
+                  <div class="field col-9">
+                    <textarea class="fullWidth height72"></textarea>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Page Meta -->
+<div class="pageMeta flex align-center justify-end">
+  <button class="btn green"> Save Changes</button>
+</div>
+

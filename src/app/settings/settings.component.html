@@ -1,0 +1,15 @@
+<aside class="sidebar pt-35">
+  <p class="font-xs text-grey pl-30">CONFIGURATION</p>
+  <ul class="list menu mt-15">
+    <li><a routerLinkActive="active" [routerLink]="['/settings/devices']">Display Devices</a></li>
+    <li><a routerLinkActive="active" [routerLink]="['/settings/groups']">Display Groups</a></li>
+    <li><a routerLinkActive="active" [routerLink]="['/settings/profiles']">Display Profile</a></li>
+  </ul>
+  <a [routerLink]="['/']" class="btn blue fixedBottom">Exit Kitchen Configuration</a>
+</aside>
+<section class="content settings">
+  <div class="pageTitle">
+    <h2>Kitchen Monitor Configuration</h2>
+  </div>
+  <router-outlet></router-outlet>
+</section>

@@ -1,0 +1,23 @@
+<div class="metaBar flex justify-space-between align-center">
+  <ul class="flex">
+    <li *ngIf="table.type === 'restaurant'">
+      <i class="icon-user-group"></i>
+      <span>{{table.customer.count}}</span>
+    </li>
+    <li *ngIf="table.type === 'takeaway'">
+      <i class="icon-takeaway"></i>
+    </li>
+    <li *ngIf="table.type === 'delivery'">
+      <i class="icon-car"></i>
+    </li>
+    <li>
+      <i class="icon-user"></i>
+      <span>{{table.customer.name}}</span>
+    </li>
+  </ul>
+
+  <div class="timer red">
+    <i class="icon-time"></i>
+    <span>{{table.customer.timer | counter}}</span>
+  </div>
+</div>

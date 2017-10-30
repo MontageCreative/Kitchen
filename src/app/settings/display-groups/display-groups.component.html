@@ -1,0 +1,218 @@
+<div class="article last-child ">
+  <h4 class="text-dark pb-30">Display Groups</h4>
+  <div class="posRel">
+    <div class="flex align-center">
+      <ul class="tabstyle">
+        <li (click)="onChangeTab()" [class.active]="!tab"><a>Kitchen</a></li>
+        <li (click)="onChangeTab('barista')" [class.active]="tab === 'barista'"><a>Barista</a></li>
+        <li (click)="onChangeTab('dispense')" [class.active]="tab === 'dispense'"><a>Dispense</a></li>
+      </ul>
+      <button class="btn green  addBtn" (click)="addDisplayGroupDialog()">+</button>
+    </div>
+    <button class="btn settingBtn" (click)="editGroupNamesDialog()"><i aria-hidden="true"
+                                                                       class="fa fa-cog text-grey"></i></button>
+  </div>
+  <div class="flex pt-30 pb-20 contentBorder fullHeight">
+    <div class="col-6 pl-35 pr-35 borderR" [ngSwitch]="tab">
+
+
+      <div *ngSwitchDefault>
+        <h4 class="mb-10">Display devices in this group</h4>
+        <ul class="groupList">
+          <li>
+            <div>
+              <span>Main kitchen 1</span>
+              <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span>Main kitchen 2</span>
+              <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div *ngSwitchCase="'barista'">
+        <h4 class="mb-10">Display devices in this group</h4>
+        <ul class="groupList">
+          <li>
+            <div>
+              <span>Main kitchen 1</span>
+              <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span>Main kitchen 1</span>
+              <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+            </div>
+          </li>
+          <li>
+            <div>
+              <span>Main kitchen 2</span>
+              <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div *ngSwitchCase="'dispense'">
+        <h4 class="mb-10">Display devices in this group</h4>
+        <ul class="groupList">
+          <li>
+            <div>
+              <span>Main kitchen 1</span>
+              <a class="deleteBtn"><span class="icon-delete-thin"></span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+      <button class="btn green mt-15 leftplus"><span>+</span>New Device</button>
+    </div>
+    <div class="col-6 pl-35 pr-35">
+      <h4 class="mb-10">Menu items in this display group</h4>
+      <ul class="groupList">
+        <li class="toggleParent">
+          <div>
+            <span>Group: Entree</span>
+            <div>
+              <div class="switch">
+                <input id="{{checkboxes[0].id}}" type="checkbox" [checked]="checkboxes[0].value"
+                       (change)="onChange(checkboxes[0])"/>
+                <label for="{{checkboxes[0].id}}"></label>
+              </div>
+            </div>
+            <a class="arrowBtn" appToggleDropdown><i aria-hidden="true" class=" fa fa-angle-down toggleIcon"></i></a>
+          </div>
+          <ul class="subList dropdown">
+            <li>
+              <div>
+                <span>food item</span>
+                <div class="switch">
+                  <input id="{{checkboxes[0].items[0].id}}" type="checkbox" [checked]="checkboxes[0].items[0].value"
+                         (change)="onChange(checkboxes[0].items[0])"/>
+                  <label for="{{checkboxes[0].items[0].id}}"></label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>food item</span>
+                <div class="switch">
+                  <input id="{{checkboxes[0].items[1].id}}" type="checkbox" [checked]="checkboxes[0].items[1].value"
+                         (change)="onChange(checkboxes[0].items[1])"/>
+                  <label for="{{checkboxes[0].items[1].id}}"></label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>food item</span>
+                <div class="switch">
+                  <input id="{{checkboxes[0].items[2].id}}" type="checkbox" [checked]="checkboxes[0].items[2].value"
+                         (change)="onChange(checkboxes[0].items[2])"/>
+                  <label for="{{checkboxes[0].items[2].id}}"></label>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="toggleParent">
+          <div>
+            <span>Group: Main</span>
+            <div class="switch">
+              <input id="{{checkboxes[1].id}}" type="checkbox" [checked]="checkboxes[1].value"
+                     (change)="onChange(checkboxes[1])"/>
+              <label for="{{checkboxes[1].id}}"></label>
+            </div>
+            <a class="arrowBtn" appToggleDropdown><i aria-hidden="true" class="fa fa-angle-down toggleIcon"></i></a>
+          </div>
+          <ul class="subList dropdown">
+            <li>
+              <div>
+                <span>food item</span>
+                <div class="switch">
+                  <input id="{{checkboxes[1].items[0].id}}" type="checkbox" [checked]="checkboxes[1].items[0].value"
+                         (change)="onChange(checkboxes[1].items[0])"/>
+                  <label for="{{checkboxes[1].items[0].id}}"></label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>food item</span>
+                <div class="switch">
+                  <input id="{{checkboxes[1].items[1].id}}" type="checkbox" [checked]="checkboxes[1].items[1].value"
+                         (change)="onChange(checkboxes[1].items[1])"/>
+                  <label for="{{checkboxes[1].items[1].id}}"></label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>food item</span>
+                <div class="switch">
+                  <input id="{{checkboxes[1].items[2].id}}" type="checkbox" [checked]="checkboxes[1].items[2].value"
+                         (change)="onChange(checkboxes[1].items[2])"/>
+                  <label for="{{checkboxes[1].items[2].id}}"></label>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="toggleParent">
+          <div>
+            <span>Group: Dessert</span>
+            <div class="switch">
+              <input id="{{checkboxes[2].id}}" type="checkbox" [checked]="checkboxes[2].value"
+                     (change)="onChange(checkboxes[2])"/>
+              <label for="{{checkboxes[2].id}}"></label>
+            </div>
+            <a class="arrowBtn" appToggleDropdown><i aria-hidden="true" class="fa fa-angle-down toggleIcon"></i></a>
+          </div>
+          <ul class="subList dropdown">
+            <li>
+              <div>
+                <span>food item</span>
+                <div class="switch">
+                  <input id="{{checkboxes[2].items[0].id}}" type="checkbox" [checked]="checkboxes[2].items[0].value"
+                         (change)="onChange(checkboxes[2].items[0])"/>
+                  <label for="{{checkboxes[2].items[0].id}}"></label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>food item</span>
+                <div class="switch">
+                  <input id="{{checkboxes[2].items[1].id}}" type="checkbox" [checked]="checkboxes[2].items[1].value"
+                         (change)="onChange(checkboxes[2].items[1])"/>
+                  <label for="{{checkboxes[2].items[1].id}}"></label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>food item</span>
+                <div class="switch">
+                  <input id="{{checkboxes[2].items[2].id}}" type="checkbox" [checked]="checkboxes[2].items[2].value"
+                         (change)="onChange(checkboxes[2].items[2])"/>
+                  <label for="{{checkboxes[2].items[2].id}}"></label>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Page Meta -->
+<div class="pageMeta flex align-center justify-end">
+  <button class="btn green"> Save Changes</button>
+</div>

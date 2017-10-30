@@ -1,0 +1,119 @@
+/* Start General Styles */
+
+html, body {
+    height: calc(100% - 70px);
+}
+
+body {
+	font-size: $fontSize;
+	font-family: $fontFamily;
+	color: $text;
+  font-weight: 300;
+	overflow-x: hidden;
+	background-color: #eff3f6;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+a {
+	cursor: pointer;
+	color: $text;
+	text-decoration: none;
+}
+input,a,textarea,select,button,span {
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	font: inherit;
+}
+h1,h2,h3,h4,h5,h6,th,td {
+  font-weight: normal;
+}
+p {
+	line-height: 1.2;
+}
+
+.clearAfter::after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+.clear {
+	clear: both;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.verticalT {
+  vertical-align: top;
+}
+.verticalM {
+  vertical-align: middle;
+}
+.verticalB {
+  vertical-align: bottom;
+}
+
+
+/* Start Margin Top and Bottom Spaces */
+
+
+$step: 0;
+@while $step <= 100 {
+	.mt-#{$step} {
+		margin-top: #{$step}px;
+	}
+	.mr-#{$step} {
+		margin-right: #{$step}px;
+	}
+	.mb-#{$step} {
+		margin-bottom: #{$step}px;
+	}
+	.ml-#{$step} {
+		margin-left: #{$step}px;
+	}
+	.my-#{$step} {
+		margin-top: #{$step}px;
+		margin-bottom: #{$step}px;
+	}
+	.mx-#{$step} {
+		margin-left: #{$step}px;
+		margin-right: #{$step}px;
+	}
+	.m-#{$step} {
+		margin: #{$step}px;
+	}
+
+	.pt-#{$step} {
+		padding-top: #{$step}px;
+	}
+	.pr-#{$step} {
+		padding-right: #{$step}px;
+	}
+	.pb-#{$step} {
+		padding-bottom: #{$step}px;
+	}
+	.pl-#{$step} {
+		padding-left: #{$step}px;
+	}
+	.py-#{$step} {
+		padding-top: #{$step}px;
+		padding-bottom: #{$step}px;
+	}
+	.px-#{$step} {
+		padding-left: #{$step}px;
+		padding-right: #{$step}px;
+	}
+	.p-#{$step} {
+		padding: #{$step}px;
+	}
+	$step: $step + 5;
+}
+
+
+/* End Margin Top and Bottom Spaces */
+
+/* End General Styles */

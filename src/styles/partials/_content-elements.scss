@@ -1,0 +1,284 @@
+.flex {
+	display: flex;
+}
+.wrap {
+	flex-wrap: wrap;
+}
+.justify {
+	&-center { justify-content: center;}
+	&-start { justify-content: flex-start;}
+	&-end { justify-content: flex-end;}
+	&-space-around { justify-content: space-around;}
+	&-space-between { justify-content: space-between;}
+}
+.align {
+	&-center {align-items: center;}
+	&-flex-start {align-items: flex-start;}
+	&-flex-end {align-items: flex-end;}
+}
+.block {
+	display: block;
+}
+.inBlock {
+  display: inline-block;
+}
+
+.posAbs {
+  position: absolute;
+}
+
+.posRel {
+  position: relative;
+}
+
+.fLeft {
+  float: left;
+}
+.fRight {
+  float: right;
+}
+/* Main Kitchen Orders Board */
+.board {
+	padding: 20px 40px 0;
+	height: 100%;
+	@extend .clearAfter;
+	@extend .flex;
+	@extend .justify-space-between;
+
+	.boardColumns {
+		padding: 0 16px;
+	}
+
+	.columns {
+		width: 100%;
+	}
+}
+
+// Last Fixed Column In Board
+.summary {
+	position: relative;
+
+	.currentStats {
+		width: 270px;
+		background-color: #fff;
+		border: 1px solid $border;
+		border-radius: 4px;
+		padding: 15px 25px;
+	}
+
+	.summaryList {
+		margin-top: 10px;
+		border-radius: 4px;
+		background-color: #ccd3da;
+
+		.accordionHeader {
+			padding: 0 20px;
+			height: 40px;
+			position: relative;
+
+			.dropIcon {
+				top: 13px;
+			}
+		}
+
+		.accordionBody {
+			padding: 20px;
+			border-top: 1px solid #fff;
+
+			.list {
+				li {
+					margin: 8px 0;
+					font-weight: 300;
+
+					.subList {
+						padding-left: 20px;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+
+	.summaryMeta {
+		position: absolute;
+		bottom: 0px;
+
+		.metaLogo {
+			text-align: center;
+
+			a {
+				display: inline-block;
+				@include transition(all 0.2s);
+
+				img {
+					width: 95px;
+					margin-top: 22px;
+				}
+
+				&:hover {
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+}
+
+/* Main Kitchen Settings */
+
+.settings {
+  padding-left: 250px;
+  background-color: #fff;
+
+  .pageTitle {
+    padding: 30px 30px 25px 30px;
+
+    h2 {
+      color: $textD;
+      font-weight: 100;
+      padding-bottom: 25px;
+      border-bottom: 1px solid $divider;
+    }
+  }
+
+  .article {
+    width: calc(100% - 60px);
+    margin: 0 auto 25px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $divider;
+
+    &.last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    &.mBottom0 {
+      margin-bottom: 0;
+    }
+    &.pBottom0 {
+      padding-bottom: 0;
+    }
+  }
+
+  .pageMeta {
+    width: 100%;
+    height: 80px;
+    padding: 0 30px;
+    background-color: #f0f3f8;
+  }
+}
+
+.contentBorder {
+  border: 1px solid #e7e9ed;
+  border-radius: 0px 4px 4px 4px;
+}
+.borderR {
+  border-right: 1px solid  #e7e9ed;
+}
+.borderB {
+  border-bottom: 1px solid  #e7e9ed;
+}
+
+.toggleIcon {
+  @include transition(all, .2s);
+}
+.groupList {
+
+  li>div {
+    padding: 15px 30px 18px 10px;
+    border-bottom: 1px solid #ecedf0;
+    position: relative;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.noBorder {
+      border: 0;
+    }
+    &.size-18 {
+      font-size: 18px;
+    }
+
+    &.listLg {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+
+    &.justify-start {
+      justify-content: flex-start;
+    }
+    &.align-flex-start {
+      align-items: flex-start;
+    }
+
+    &.greyText {
+      &>* {
+        font-size: 14px;
+        color: #7f8fa4;
+      }
+    }
+  }
+  .subList {
+    display: none;
+    li>div{
+      padding-left: 50px;
+      padding-right: 20px;
+    }
+  }
+  .arrowBtn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    @include transform(translateY(-50%));
+    color: #a8aab7;
+  }
+  .fa-cog {
+    display: block;
+  }
+
+  &.noBorderList {
+    li {
+      >div {
+        padding-top: 0;
+        padding-bottom: 15px;
+        border: 0;
+      }
+    }
+  }
+
+}
+button.leftplus {
+  span {
+    margin-right: 12px;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.deleteBtn {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  display: block;
+  border-radius: 50%;
+  border: 1px solid #ced0da;
+  @include linearGradient( #ffffff, #f1f3f7);
+
+  span {
+    font-size: 6px;
+    color: #a8aab7;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+
+  }
+  &:hover {
+    opacity: .9;
+  }
+}
+
+.fullHeight {
+  min-height: calc(100vh - 303px);
+}
